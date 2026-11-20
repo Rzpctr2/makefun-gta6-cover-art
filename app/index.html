@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palma Verde Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <h1>Palma Verde Cover Studio</h1>
+    <p>Your photos, graded and framed into a multi-panel cover. Photos stay on your machine — nothing is uploaded.</p>
+    <div class="group">
+      <h2>1 · Photos</h2>
+      <label>Couple (hero) <input type="file" accept="image/*" data-slot="couple"></label>
+      <label>Car <input type="file" accept="image/*" data-slot="car"></label>
+      <label>Sunset / street <input type="file" accept="image/*" data-slot="sunset"></label>
+      <button id="demo" type="button">Use the demo session photos</button>
+      <p class="hint">One photo can fill several panels. The demo set is one golden-hour session: the same couple, car and light in every panel.</p>
+    </div>
+    <div class="group">
+      <h2>2 · Grade</h2>
+      <div id="presets" class="chips"></div>
+      <div id="sliders"></div>
+      <p class="hint">Hero faces get a light grade; the heavy print look (posterize + halftone) is only on the small panels.</p>
+    </div>
+    <div class="group">
+      <h2>3 · Layout &amp; words</h2>
+      <div id="layouts" class="chips"></div>
+      <label>Title <input id="title" type="text" maxlength="24" value="PALMA VERDE"></label>
+      <label>Tagline <input id="tagline" type="text" maxlength="60" value="8 MISSIONS · 6 DISTRICTS · GOLDEN HOUR 18:52"></label>
+      <label>Quote <input id="quote" type="text" maxlength="40" value="A FEVER DREAM IN NEON"></label>
+    </div>
+    <div class="group">
+      <h2>4 · Export</h2>
+      <div class="exports">
+        <button type="button" data-export="grid">PNG 1920 × 1080</button>
+        <button type="button" data-export="magazine">PNG 1080 × 1350</button>
+        <button type="button" data-export="couple">PNG 1080 × 1080</button>
+      </div>
+      <p id="status" role="status"></p>
+    </div>
+  </section>
+  <section class="stage">
+    <canvas id="cover" width="1920" height="1080" aria-label="The cover preview"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
